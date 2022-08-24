@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>InToken</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.i18n.properties.js"></script>
+    <link rel="stylesheet" href="css/mstyle.css" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="top">
+      <div class="header">
+        <a href="" class="logo">
+          <img src="images/logo.png" />
+        </a>
+        <div class="nav navbar-tab-list">
+          <div class="gui-left">
+            <div href="javascript:void(0)" class="nav-title ft-16">
+              <div class="pointer">
+                <span class="title-left" data-locale="locale1">项目提交</span>
+                <span class="title-right text-right">
+                  <i class="icon-down-333"></i>
+                </span>
+              </div>
+              <div class="nav-children-wrap">
+                <svg
+                  width="30"
+                  height="30"
+                  viewBox="-50 -50 300 300"
+                  class="svg"
+                >
+                  <polygon
+                    stroke-linejoin="round"
+                    points="100,0 0,200 200,200"
+                    class="triangle"
+                  ></polygon>
+                </svg>
+                <a href="" target="_self">
+                  <div class="nav-children">
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAMAAABGS8AGAAAAbFBMVEUAAAD2+f/5+//1+v/2+v/2+v/3+v/4///////////1+v/2+f/1+v/2+v/2+v/2+f/2+v/1+v/2+v/2+f/1+f/3+//2+//2/P/1/P/1+f8pgP/b6f9Bjv90rP/f7P9wqv89jP84iP+lyv+Kuv9kStACAAAAGXRSTlMA3ivvwmldIgUG7OTSysWvqZ6TiYB8d1FQx6gqIgAAAkxJREFUWMPNmdty4jAMQH2JEwghNEBDlLRA4f//cTvdnVVTxa6N5GnPozNzHhxLsiUVgRn6rmh0DVDrpuj6wSg+xu0sEOzOseTVUYMXfawes67KFr6hLVfJ2rXTEIF26zRvuYFINmWC1hSQQGFiN/cAiRyitrraQjLbiANysvAA9vSd9xke5Dns3cPD7EOH9wkYPPmPNPEmmoX3Admn/Df+HzyBACfqrSwIYCsSx1sQYfs1uhPzw3S7TZ68MfcaSOI+vnOHRcxMXEAKr+MHr7BEMcvr5PP5ch0/cb2ciddnLtG73hDv2/iFt/PM+/LiNW8wtB35eBkJl5l3mvxm9/+o0bp5peLrzAvgN+uVd4dhXGDupWa6y220GL1Bc/svmCFajN6w+W9gH6PFd/SieSlSjh9iHSue0Ds3k+jWGM0x4ht65+bbYlw7WTEe5R3IbwXs3sUW5H8eWNxi5nGjmzwAwg4QZFA9IOyQRnrVAcJOQkiHtYOXNmkdaQBhJ3qkwYDmlSYa1DUg7GKK1AoQRvmnoJh3YaHiGrJQx/+80DpFJxy3wDqlSQiQwDqlSAjpwDqlS0hCgXVKr4Y84kGZPGKjlM0htlhMuWJaTJ2sGMu/ERbjQ0TLizVeCvlieims5MUVXrxFxS0+FWTFJT5uJJMQPm6Uk02bLvEB6VsPPCBVKVmaSvJIl6EgbQUhDGmEyHDI3rqRbzblb4/JN/TkW5C5m6bybd78jWn5Vnr+5n/+cQWyZgxYhEdCPz/EShq7/ZZBYdRo8/cNYznj4z944FcMLzDohwAAAABJRU5ErkJggg=="
+                    />
+                    <div class="detail">
+                      <div data-locale="locale2">提交DApp</div>
+                      <!---->
+                    </div>
+                  </div>
+                  <div class="line"></div>
+                </a>
+                <a href="" target="_self">
+                  <div class="nav-children">
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAMAAABGS8AGAAAAjVBMVEUAAAD2+v/5+//////2+v/1+v/2+f/2+v/2+v/3+v/4///////1+v/2+f/2+f/1+v/2+v/1+v/2+v/2+f/2+//2+v/1+v/2/P/1/P/////1+f8pgP5DkP/d6/6qzf5dn/8vg//Y6P+Ft/97sf/m8P/S5f/P4//K4P+kyf9tqf9Ajv84if+Uv/5Hkv6+2P83pQ2BAAAAGnRSTlMAwysC+u/drH5dIgbs5N/Syp6TiXdtZlFQBbPC6Z8AAAJjSURBVFjDrJTbVsIwEEUbeqOVi9zxJNrYgiII//95Ig9imJk2pezHPOyVNTPnBM2EvfV8osajQRQNRmM1ma97YdCZ3iKNQYjTRa+LNe8nEEn6+X3WMFNoQGXtZ/K0TOBBsnxq582G8GSYtdmYQguU7x5fZhFaEc1evE7hGa159jiQVYw7iFdN3j7upF9/u1PczTSsOd4UHUjFkw5TdCKV/jxFR6Zt9tZ9gys8gBWTixgPIM5Jjmvz9r6rCnOw9mCKavdem8HbdM8g8lHutcO+/IDI7KbPIgh8Fpqh+IRA5HadkmbwpQW+pIkop9fBU1otYkvwZP+iPATHptC1FBtwDK/RXoJja3QDZguO5V9HJGA4Wd2IPYEhCesmvCVe1rytm7Li5mu0F2YjH0YOhkJ7UoAhF1ut1N6UYsslTC6sv9gySUkuaQaFzduxqo5sBkH5zfWC6QfN8I0z35qB6Y3FWZz6be4NF9789pee0xHTnuS9spm2aBxyIy4F7+urYC65Ia9B2AteYwTzHoR1MKe3Jnm1lsz04ubBhLztRK9o3hHJhCmKSvLK5oqpizE9NslLzfLBjYMReTMkFxfv1UyTYohkFAzI28HJ8dXrmp10H4hkEETkzTrTu3ods7sJSyTRT3N2cgQwDAJBMADln68C4MNRXeAA/LAl2J1hL2afgv08dtzYBWFXmg0hNjbZoGerSS1Ttv5ZYFERi4VCFmNV8GZVgZUbVcdYgVSVV5V0hhUUCGHoRsEmhccU0FMIkkFThXkVmEYoXcN/ryvi8xqCBSmhfYlV0m5XRGFKbd6TsRN9/AGKg3SFPQAi5gAAAABJRU5ErkJggg=="
+                    />
+                    <div class="detail">
+                      <div data-locale="locale3">提交Token</div>
+                      <!---->
+                    </div>
+                  </div>
+                  <div class="line"></div>
+                </a>
+                <a href="" target="_self">
+                  <div class="nav-children">
+                    <img src="images/NFT.66d53f0.png" />
+                    <div class="detail">
+                      <div data-locale="locale4">提交NFT</div>
+                      <!---->
+                    </div>
+                  </div>
+                  <div class=""></div>
+                </a>
+              </div>
+            </div>
+            <a href="#contact" data-locale="locale5">联系我们</a>
+            <a href="" data-locale="locale6">帮助中心</a>
+          </div>
+        </div>
+        <div class="lang_area">
+          <span onclick="i18nBtn('zh')" id="lang_zh">简</span>
+          <i class="s_line">|</i>
+          <span onclick="i18nBtn('en')" id="lang_en">EN</span>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="bannerL">
+          <h2 data-locale="locale7">WEB3 时代的多链钱包</h2>
+          <p data-locale="locale8">多链钱包，安全易用，自我掌控</p>
+          <div class="down">
+            <a
+              href="https://www.intokens.io/InToken.apk"
+              class="an"
+              data-locale="locale9"
+            >
+              安卓下载
+            </a>
+            <a
+              href="https://apps.apple.com/hk/app/intoken/id1628083732"
+              class="phone"
+              data-locale="locale10"
+            >
+              ios下载
+            </a>
+          </div>
+        </div>
+        <div class="bannerR">
+          <img src="images/0.png" />
+        </div>
+      </div>
+    </div>
+    <!--<div class="intro">-->
+    <!--    <div class="introL">-->
+    <!--        <img src="images/2.png">-->
+    <!--    </div>-->
+    <!--    <div class="introR">-->
+    <!--        <h2>多链钱包，简单易用-->
+    <!--        </h2>-->
+    <!--        <p>多链多资产，一个钱包，拥有主流资产-->
+    <!--        </p>-->
+    <!--    </div>-->
+    <!--</div>-->
+
+    <div class="duolian">
+      <div class="intro">
+        <div class="introR" style="width: 100%; float: none">
+          <h2 style="color: #fff; margin-top: 75px" data-locale="locale11">
+            多链钱包，简单易用
+          </h2>
+          <p style="color: #fff" data-locale="locale12">
+            多链多资产，即将支持比特币、以太坊、EOS、波卡、波场、BSC、AVAX、Cosmos、Binance
+          </p>
+        </div>
+        <div class="blockchain-list">
+          <img
+            src="images/blockchain-2.2a3c355.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-1"
+          />
+          <img
+            src="images/blockchain-3.33497e5.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-2"
+          />
+          <img
+            src="images/blockchain-1.4dd999d.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-3"
+          />
+          <img
+            src="images/blockchain-5.a37adce.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-4"
+          />
+          <img
+            src="images/blockchain-12.10ecb00.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-5"
+          />
+          <img
+            src="images/blockchain-11.23158ca.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-6"
+          />
+          <img
+            src="images/blockchain-17.384cd50.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-7"
+          />
+          <img
+            src="images/blockchain-16.bee327f.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-8"
+          />
+          <img
+            src="images/blockchain-18.a9b11c3.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-9"
+          />
+          <img
+            src="images/blockchain-13.f152cc2.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-10"
+          />
+          <img
+            src="images/blockchain-14.5c8da03.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-11"
+          />
+          <img
+            src="images/blockchain-15.09dda65.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-12"
+          />
+          <img
+            src="images/blockchain-4.bc34bfc.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-13"
+          />
+          <img
+            src="images/blockchain-8.c0577b3.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-14"
+          />
+
+          <img
+            src="images/blockchain-6.0cdb26a.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-15"
+          />
+          <img
+            src="images/blockchain-7.ef95408.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-16"
+          />
+          <img
+            src="images/blockchain-9.3559360.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-17"
+          />
+          <img
+            src="images/blockchain-10.4f02435.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-18"
+          />
+          <img
+            src="images/blockchain-19.2669e73.png"
+            alt="以太坊钱包"
+            class="blockchain-logo blockchain-19"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div class="introL">
+        <img src="images/3.png" />
+      </div>
+      <div class="introR">
+        <h2 data-locale="locale13">去中心化，资产自我掌控</h2>
+        <p data-locale="locale14">无需注册，钱包数据本地保存，资产自我保管</p>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="introL">
+        <img src="images/11.png" />
+      </div>
+      <div class="introR">
+        <h2 data-locale="locale15">资产安全，悉心守护</h2>
+        <p data-locale="locale16">私钥自持，多层加密，专业便捷</p>
+      </div>
+    </div>
+    <div class="shengtai">
+      <h2 class="title" data-locale="locale17">生态伙伴</h2>
+      <div class="shengtaicon">
+        <img src="images/ethereum.svg" />
+        <img src="images/bsc.svg" />
+        <img src="images/polygon.svg" />
+        <img src="images/bitcoin.svg" />
+        <img src="images/polkadot.svg" />
+        <img src="images/cosmos.svg" />
+      </div>
+    </div>
+    <div class="contact" id="contact">
+      <h2 class="title" data-locale="locale18">联系我们</h2>
+      <div class="contactcon">
+        <div class="contitem">
+          <p>
+            <img src="images/twitter.png" />
+          </p>
+          <h2 data-locale="locale19">官方 twitter</h2>
+          <p>
+            <a href="https://twitter.com/0xintoken">
+              https://twitter.com/0xintoken
+            </a>
+          </p>
+          <p class="des" data-locale="locale20">开放的数字钱包用户互助平台</p>
+        </div>
+        <div class="contitem">
+          <p>
+            <img src="images/4.png" />
+          </p>
+          <h2 data-locale="locale21">提交反馈</h2>
+          <p>
+            <a>0xintoken@gmail.com</a>
+          </p>
+          <p class="des" data-locale="locale22">
+            产品使用遇到问题?尝试向用户支
+            <br />
+            持团队寻找答案吧
+          </p>
+        </div>
+        <div class="contitem">
+          <p>
+            <img src="images/4.png" />
+          </p>
+          <h2 data-locale="locale23">商务合作</h2>
+          <p>
+            <a href="https://discord.gg/wRrSxtKsxx">
+              https://discord.gg/wRrSxtKsxx
+            </a>
+          </p>
+          <p class="des" data-locale="locale24">媒体及商务合作联系</p>
+        </div>
+      </div>
+    </div>
+    <div class="link">
+      <div class="linkL">
+        <img src="images/5.png" />
+        <div class="links">
+          <h2>
+            <a href="https://ioair.link/3jmrbd" data-locale="locale25">
+              立即下载
+            </a>
+          </h2>
+          <p data-locale="locale26">带你畅想区块链世界</p>
+        </div>
+      </div>
+      <div class="linkR">
+        <a href="https://apps.apple.com/hk/app/intoken/id1628083732">
+          <img src="images/6.png" />
+        </a>
+        <!--<a href="https://apps.apple.com/hk/app/intoken/id1628083732">
+          <img src="images/7.png" />
+	</a>-->
+        <a href="https://www.intokens.io/InToken.apk">
+          <img src="images/8.png" />
+        </a>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="copyL" data-locale="locale27">版权信息</div>
+      <div class="copyR">
+        <a href="https://twitter.com/0xintoken">
+          <img src="images/9.png" />
+        </a>
+        <a href="">
+          <img src="images/10.png" />
+        </a>
+      </div>
+    </div>
+    <div class="cover">
+      <div class="coverbg"></div>
+      <div class="covercon">
+        <p>敬请期待</p>
+      </div>
+    </div>
+    <script>
+      $(".tjiao").click(function () {
+        $(".cover").show();
+      });
+      $(".coverbg").click(function () {
+        $(".cover").hide();
+      });
+
+      function loadProperties(lang) {
+        $.i18n.properties({
+          name: "strings",
+          path: "lang/",
+          mode: "map",
+          language: lang,
+          callback: function () {
+            $("[data-locale]").each(function () {
+              $(this).html($.i18n.prop($(this).data("locale")));
+            });
+          },
+        });
+      }
+
+      function i18nBtn(e) {
+        loadProperties(e);
+        localStorage.setItem("i18n", e);
+        $(".lang_area span").removeClass("current");
+        $("#lang_" + localStorage.getItem("i18n")).attr("class", "current");
+      }
+
+      localStorage.setItem("i18n", "en");
+      
+      if (localStorage.getItem("i18n")) {
+        loadProperties(localStorage.getItem("i18n"));
+        $(".lang_area span").removeClass("current");
+        $("#lang_" + localStorage.getItem("i18n")).attr("class", "current");
+      }
+    </script>
+  </body>
+</html>
